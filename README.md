@@ -27,7 +27,8 @@ The reported crimes will be investigated and categorized by police stations and 
   - If user wants to have a role of police( investigator) first he/she must be registered as user then he/she should  have to send the required information for the admin to have a role as investigator Then the admin make the required validation and assign a role
 
 **authentication feautures**
-Both users(reporters) and police-stations need to register and log in to our system to access features that our system provides. and our system performs single factor authentication inorder to validate the users
+- Both users(reporters) and police-stations need to register and log in to our system to access features that our system provides. and our system performs single factor authentication inorder to validate the users
+- users are also able to log out of the system easily.they are also able to edit their accout(change username and password) or delete their account 
 
 
 
