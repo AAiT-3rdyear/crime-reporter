@@ -14,20 +14,21 @@ The reported crimes will be investigated and categorized by police stations and 
 
 
 **business feautures**
-  1.Users are able to take or upload criminal events to the nearby police station using our app. In doing this the user can take the picture or the video of the event from our app or he can upload previously recorded crime  from his file. 
-  2. Police stations are able to categorize the reported crimes into pending,ongoing ,and solved crimes. And notify the reporter whether or not the crime he reported has solved or not. Police stations  also have  the ability to report the crime to the higher body if it is above their scope. 
+  1.Users are able to report crime to nearby police station. In doing this the user can upload picture or the video of the crime  from his file.
+  the user reports the crime by filling the form that includes the required information needed by the police station. 
+  
+  2. Police stations are able to categorize the reported crimes into pending,ongoing ,and solved crimes. And notify the reporter whether or not the crime he reported has been solved or not. Police stations  also have  the ability to report the crime to the higher body if it is above their scope. 
 
 
 **authorization feautures**
  We will have three  roles in our project: user(reporter) , police-stations (investigator) and admin.
 
-  - User(reporter) has a role of recording and sending crime activities to the respected police station. User can't have access to the reported crimes unless he/she is given a role by the admin  
+  - User(reporter) has a role of recording and sending crime activities to nearby police station . User can't have access to the reported crimes unless he/she is given a role by the admin  
   - police-stations( investigators) has a role of accessing  the reported crimes and they can also have a role of reporting crime for another police stations 
-  - Admin has full access to the  system users he also have an authority to assign a role for police-stations as investigators after validating whether that police station have specific legal authority
-  - If user wants to have a role of police( investigator) first he/she must be registered as user then he/she should  have to send the required information for the admin to have a role as investigator Then the admin make the required validation and assign a role
+  - Admin has full access to the  system users he also have an authority to register police-stations as investigators after validating whether that police station have specific legal authority
 
 **authentication feautures**
-- Both users(reporters) and police-stations need to register and log in to our system to access features that our system provides. and our system performs single factor authentication inorder to validate the users
+- Both users(reporters) need to register and log in to our system to access features that our system provides. and our system performs single factor authentication inorder to validate the users
 - users are also able to log out of the system easily.they are also able to edit their accout(change username and password) or delete their account 
 
 
