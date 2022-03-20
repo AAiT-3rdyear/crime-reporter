@@ -8,7 +8,7 @@
 **project discription**
    Crime-reporter application  help people to report  crimes  to the nearby police station by using their android phone . Crime activities can be theft, fighting, corruption acts and the like. The user can send his file in the form of photo, audio or video to the nearby police station. 
 
-The reporting can be done anonymously or named so that the reporter will have full security. One can contribute to the development of the security of society because our app will provide a hassle-free and easy way for crime reporting. 
+The crime reporter need to fill the required information needed  by the police station in order to report the crime. One can contribute to the development of the security of society because our app will provide a hassle-free and easy way for crime reporting. 
 
 The reported crimes will be investigated and categorized by police stations and some notification message is forwarded for the reporter  indicating  whether the  crime he reported is solved or not
 
