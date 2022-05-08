@@ -70,7 +70,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   children: const [
                   Text("Sign Up",
                       style: TextStyle(
-                          fontSize: 33,
+                          fontSize: 32,
                           fontWeight: FontWeight.w800
                          ),),
                   SizedBox(height: 15,),
