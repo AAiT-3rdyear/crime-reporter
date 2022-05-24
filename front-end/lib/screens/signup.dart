@@ -1,13 +1,7 @@
 
 import 'dart:convert';
-// import 'package:crime_reporter/api/api.dart';
-import 'package:crime_reporter/api/api.dart';
-import 'package:crime_reporter/models/user.dart';
-// import 'package:crime_reporter/screens/jsonn.json';
-
-import 'package:crime_reporter/services/network.dart';
+import 'package:crime_reporter/network/network.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 
@@ -43,9 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             'password':passwordcontroler.text
                              });
       
-      // Api api = Api();
-      // user = await api.getUser(response.body);
-      }
+                             }
    
    
 
@@ -70,7 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   children: const [
                   Text("Sign Up",
                       style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 33,
                           fontWeight: FontWeight.w800
                          ),),
                   SizedBox(height: 15,),
@@ -300,11 +292,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
                        Padding(
                          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                        //           child: validated?const Center(
-                        //           child: CircularProgressIndicator(
-                        //          ),
-                        //        ):
-              
                            child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   primary: Colors.yellow[800],
@@ -325,7 +312,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                     else{
                                       userExist= false;
                                       validated = true;
-                                      // response = response;
                                       Navigator.pushNamed(context, '/login'); 
 
                                     }
@@ -344,7 +330,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           children: [ Text('already have an account ? ${user.email}: '),
                                       InkWell(
                                           onTap: ()=> Navigator.pushNamed(context, '/login'),
-                                          child:  Text('Login ',style: TextStyle(color: Colors.blue),),
+                                          child: const Text('Login ',style: TextStyle(color: Colors.blue),),
                         )],),)                    
                     
 

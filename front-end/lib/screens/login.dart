@@ -1,10 +1,10 @@
 import 'dart:convert';
-
-import 'package:crime_reporter/api/api.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:crime_reporter/network/resToModel.dart';
 import 'package:crime_reporter/components/cliper.dart';
 import 'package:crime_reporter/models/welcomeScreenArguments.dart';
-import 'package:crime_reporter/services/network.dart';
-import 'package:crime_reporter/services/socket.dart';
+import 'package:crime_reporter/screens/policeScreen.dart';
+import 'package:crime_reporter/network/network.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,29 +21,38 @@ class _LoginPageState extends State<LoginPage> {
     NetworkHandler networkHandler = NetworkHandler();
     TextEditingController emailcontroler = TextEditingController();
     TextEditingController passwordcontroler = TextEditingController();
+    dynamic authorized = true;
+    dynamic reportedList;
+    var circular = false;
     dynamic response;
     dynamic response2;
+    dynamic response3;
     Api api = Api();
     dynamic user;
     dynamic crimes;
-    dynamic authorized = true;
-    var circular = false;
-
-
+   
 
      loginHandler() async {
       response = await networkHandler.post('/login',{
-                            'username':emailcontroler.text,
-                            'password':passwordcontroler.text
-                             });}
-
+                    'username':emailcontroler.text,
+                    'password':passwordcontroler.text
+                     });}
 
      sampleCrime() async {
       response2 = await networkHandler.get('/user/crimeSample');
-          crimes = api.getSampleCrime(response2.body);
-          }
+                     crimes = api.getSampleCrime(response2.body);}
 
-   
+    fetchReported() async {
+      reportedList = await networkHandler.post('/police/reportedCrimes/${user.fullname}',{
+                     'status':"reported",});}
+
+
+final storage = new FlutterSecureStorage();
+
+// String value = await storage.read(key: key);
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,14 +101,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Positioned(
-              top: 75.0,
-              left: 385.0,
+              top: 0,
+              right: 0.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                      padding: EdgeInsets.fromLTRB(10, 10, 550, 10),
+                      padding: EdgeInsets.fromLTRB(10, 5, 20, 10),
                       child: const Text(
                         'Report',
                         style: TextStyle(
@@ -109,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.bold),
                       )),
                   Container(
-                      padding: EdgeInsets.fromLTRB(25, 0, 25, 25),
+                      padding: EdgeInsets.fromLTRB(10, 0,20, 10),
                       child: const Text(
                         'CRIME',
                         style: TextStyle(
@@ -132,7 +141,6 @@ class _LoginPageState extends State<LoginPage> {
                       radius: 50,
                     ),
                   )),
-                // the second image
                 const Positioned(
                   top: 215.0,
                 left: 35.0,
@@ -143,7 +151,6 @@ class _LoginPageState extends State<LoginPage> {
                 radius: 60,
               ),
             )),
-            // last image
             const Positioned(
               top: 155.0,
                 left: 105.0,
@@ -158,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
         
             // form field
             Positioned(
-                bottom: 4.0,
+                bottom: 5.0,
                 child: Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -167,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Color(0xFFF6F5F5),
                   ),
                   width: 500,
-                  height: 400,
+                  height: 290,
                   child: Form( 
                     key: _formKey,
                       child: Column(children: [
@@ -193,8 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         )),
                     Padding(
-                      padding:
-                          const EdgeInsets.fromLTRB(20, 25, 100, 0),
+                      padding:const EdgeInsets.fromLTRB(20, 25, 100, 0),
                       child: TextFormField(
                         controller: passwordcontroler,
                         obscureText: true,
@@ -236,32 +242,40 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: ()async {
                           setState(() {circular = true;});
                           if (_formKey.currentState!.validate()) {
-                                 
                                   await loginHandler();
-
                                   if(response.statusCode == 401){
-                                    setState(() { authorized = false; circular= false; });
-                                    }
+                                      setState(() { authorized = false; circular= false; });}
+                                  
                                   else {
                                      user =  api.getUser(response.body);
                                      await sampleCrime();
                                      setState(() {circular= false;});
 
-                                     Navigator.pushNamed( 
-                                       context, 
-                                       '/welcomeScreen',
-                                       arguments: WelcomeScreenArgs(user: user, sampleCrimes:crimes )); 
-                                       }
-                                }
-                                else{setState(() {circular=false;});}
-                                },
+                                        await storage.write(key: "token", value: "${json.decode(response.body)["user"]['token']}");
+                                         
+                                        //  if (user.role == "Police"){
+                                        //     await fetchReported();
+                                        //     Navigator.pushReplacement(context, MaterialPageRoute(builder:(BuildContext context) =>
+                                        //     PoliceScreen(user:user,reportedList : json.decode((reportedList).body))));
+                                        //     }
 
+
+                                         if (user.role == "User"){
+                                            Navigator.pushNamed( context, '/welcomeScreen',
+                                             arguments: WelcomeScreenArgs(user: user, sampleCrimes:crimes )); 
+                                            }
+
+                                        else if (user.role == "Admin"){
+                                            Navigator.pushNamed( context, '/welcomeScreen',
+                                            arguments: WelcomeScreenArgs(user: user, sampleCrimes:crimes )); 
+                                            }
+                                            }}
+                                    else{setState(() {circular=false;});}},
+                                    
                       child: const Text('Login',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w500),),
-                      ),
-                      
-                      
-                      ),
+                      ),),
         
+                    
                     
                     
                     Padding(
