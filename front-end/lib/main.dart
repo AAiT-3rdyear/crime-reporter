@@ -1,0 +1,40 @@
+import 'package:crime_reporter/bloc/authBloc/auth_bloc.dart';
+import 'package:crime_reporter/bloc/policeBloc/policebloc_bloc.dart';
+import 'package:crime_reporter/bloc_observer.dart';
+import 'package:crime_reporter/presentation/common/routes/routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart';
+import 'bloc/userBloc/userbloc_bloc.dart';
+
+void main() {
+  BlocOverrides.runZoned(() => runApp(Myapp()),
+      blocObserver: CrimeReportBlocObserver());
+}
+
+RouteGenerator routeGenerator = RouteGenerator();
+final _router = routeGenerator.routes;
+
+class Myapp extends StatelessWidget {
+  Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (BuildContext context) => AuthBloc(),
+        ),
+        BlocProvider<PoliceblocBloc>(
+          create: (BuildContext context) => PoliceblocBloc(),
+        ),
+        BlocProvider<UserblocBloc>(
+          create: (BuildContext context) => UserblocBloc(),
+        ),
+      ],
+      child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routeInformationParser: _router.routeInformationParser,
+          routerDelegate: _router.routerDelegate),
+    );
+  }
+}
