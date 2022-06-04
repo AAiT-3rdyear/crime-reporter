@@ -1,12 +1,14 @@
-import 'package:crime_reporter/bloc/authBloc/auth_bloc.dart';
-import 'package:crime_reporter/components/componenets.dart';
 import 'package:crime_reporter/domain/models.dart';
 import 'package:crime_reporter/presentation/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
-import '../../bloc/policeBloc/policebloc_bloc.dart';
 import 'dart:convert';
+
+import '../../application/Auth/auth.dart';
+import '../../application/police/bloc/policebloc_bloc.dart';
+import '../components/bottumNavBar.dart';
+import '../components/reportedCard.dart';
 
 class PoliceScreen extends StatefulWidget {
   PoliceScreen({

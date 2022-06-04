@@ -1,5 +1,6 @@
-import 'package:crime_reporter/components/myReportsCard.dart';
 import 'package:flutter/material.dart';
+
+import '../components/myReportsCard.dart';
 
 class MyReports extends StatelessWidget {
   MyReports({

@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../infrastructure/repository/user_repositories.dart';
+
+import '../../../infrastructure/repository/user_repositories.dart';
 part 'userbloc_event.dart';
 part 'userbloc_state.dart';
 

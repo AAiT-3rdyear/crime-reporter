@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../bloc/userBloc/userbloc_bloc.dart';
+import '../../application/user/bloc/userbloc_bloc.dart';
 
 class CrimeCard2 extends StatelessWidget {
   CrimeCard2({ Key? key,this.myreports,this.index}) : super(key: key);

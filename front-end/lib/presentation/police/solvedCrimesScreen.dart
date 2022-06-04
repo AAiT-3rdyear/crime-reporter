@@ -1,5 +1,5 @@
-import 'package:crime_reporter/components/reportedCard.dart';
 import 'package:flutter/material.dart';
+import '../components/reportedCard.dart';
 
 class SolvedCrime extends StatefulWidget {
   SolvedCrime({Key? key, this.solved}) : super(key: key);

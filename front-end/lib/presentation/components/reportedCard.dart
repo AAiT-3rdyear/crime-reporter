@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../bloc/policeBloc/policebloc_bloc.dart';
+
+import '../../application/police/bloc/policebloc_bloc.dart';
 
 class ReportedCard extends StatelessWidget {
  ReportedCard({ Key? key,this.title,this.discription ,this.location,

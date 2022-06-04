@@ -1,4 +1,3 @@
-import 'package:crime_reporter/bloc/userBloc/userbloc_bloc.dart';
 import 'package:crime_reporter/infrastructure/repository/user_repositories.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -8,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'dart:io';
+
+import '../../application/user/bloc/userbloc_bloc.dart';
 
 
 class CrimeDetail extends StatefulWidget {

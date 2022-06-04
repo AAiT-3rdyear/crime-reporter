@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../bloc/policeBloc/policebloc_bloc.dart';
+
+import '../../application/police/bloc/policebloc_bloc.dart';
 
 class PoliceViewDetail extends StatefulWidget {
   PoliceViewDetail({Key? key, this.detail}) : super(key: key);

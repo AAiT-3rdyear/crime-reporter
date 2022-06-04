@@ -1,10 +1,12 @@
 import 'dart:convert';
-import 'package:crime_reporter/bloc/authBloc/auth_bloc.dart';
 import 'package:crime_reporter/presentation/user/myReportsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../bloc/userBloc/userbloc_bloc.dart';
-import '../../components/componenets.dart';
+
+import '../../application/Auth/auth.dart';
+import '../../application/user/bloc/userbloc_bloc.dart';
+import '../components/bottumNavBar.dart';
+import '../components/crimeCard.dart';
 
 class WelcomeScreen extends StatefulWidget {
   WelcomeScreen({

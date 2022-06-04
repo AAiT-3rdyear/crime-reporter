@@ -1,10 +1,11 @@
-import 'package:crime_reporter/bloc/authBloc/auth_bloc.dart';
-import 'package:crime_reporter/bloc/policeBloc/policebloc_bloc.dart';
 import 'package:crime_reporter/bloc_observer.dart';
 import 'package:crime_reporter/presentation/common/routes/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'bloc/userBloc/userbloc_bloc.dart';
+
+import 'application/Auth/Bloc/auth_bloc.dart';
+import 'application/police/bloc/policebloc_bloc.dart';
+import 'application/user/bloc/userbloc_bloc.dart';
 
 void main() {
   BlocOverrides.runZoned(() => runApp(Myapp()),
