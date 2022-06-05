@@ -1,7 +1,6 @@
-import 'package:crime_reporter/bloc/userBloc/userbloc_bloc.dart';
-import 'package:crime_reporter/repositories/user_repositories.dart';
+import 'package:crime_reporter/application/user/bloc/userbloc_bloc.dart';
+import 'package:crime_reporter/infrastructure/repository/user_repositories.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../../lib/bloc/authBloc/auth_bloc.dart';
 
 void main() {
   late UserRepository userRepository;

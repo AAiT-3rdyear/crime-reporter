@@ -1,6 +1,6 @@
 
+import 'package:crime_reporter/application/Auth/auth.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../../lib/bloc/authBloc/auth_bloc.dart';
 
 void main() {
   group('LoginState', () {
