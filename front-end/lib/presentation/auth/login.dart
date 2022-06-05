@@ -1,10 +1,7 @@
-import 'package:crime_reporter/application/Auth/bloc/Auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../application/Auth/auth.dart';
-import '../../application/Auth/bloc/Auth_state.dart';
 import '../components/cliper.dart';
 
 class LoginPage extends StatefulWidget {

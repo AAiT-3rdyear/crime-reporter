@@ -20,7 +20,7 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return MultiBlocProvider (
       providers: [
         BlocProvider<AuthBloc>(
           create: (BuildContext context) => AuthBloc(),
