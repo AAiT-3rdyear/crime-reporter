@@ -37,37 +37,37 @@ router.post("/update/image",authenticateUser, upload.single('img'),async (req,re
 })
 
 
-// router.post("/update",(req,res)=>{
+router.post("/update",(req,res)=>{
 
-    // const profile = new User({
-    //     fullname: fullname.trim(),
-    //     phone_no: phone_no.trim(),
-    //     email: email.trim(),
-    //     role:req.body["role"],
-    //     imageURL:req.body['imageURL']
-    // });
-
-
-    // profile.save((err) => {
-    //     if (err) res.json(err);
-    //     else res.json({
-    //         user:{
-    //             _id:new_user._id,
-    //             fullname:profile.fullname,
-    //             email: profile.email,
-    //             phone_no:profile.phone_no,
-    //             password:profile.password,
-    //             imgUrl: profile.imageURL
-
-    //          },
-    //         success : true,
-    //         fullname: fullname.trim(),
-    //      });
-    // });
+    const profile = new User({
+        fullname: fullname.trim(),
+        phone_no: phone_no.trim(),
+        email: email.trim(),
+        role:req.body["role"],
+        imageURL:req.body['imageURL']
+    });
 
 
+    profile.save((err) => {
+        if (err) res.json(err);
+        else res.json({
+            user:{
+                _id:new_user._id,
+                fullname:profile.fullname,
+                email: profile.email,
+                phone_no:profile.phone_no,
+                password:profile.password,
+                imgUrl: profile.imageURL
 
-// })
+             },
+            success : true,
+            fullname: fullname.trim(),
+         });
+    });
+
+
+
+})
 
 router.patch("/update/profile",async (req,res)=>{
     await User.findOneAndUpdate({username:req.body.email},
