@@ -6,13 +6,13 @@ void main() {
   group('userblocevent', () {
     group('Userbloc', () {
       test('supports value equality', () {
-        expect(GetOngoing(Path()), GetOngoing(Path()));
+        expect(GetOngoing("id"), GetOngoing("id"));
       });
-       test('supports value equality', () {
-        expect(GetSolved(Path()), GetSolved(Path()));
+      test('supports value equality', () {
+        expect(GetSolved("id"), GetSolved("id"));
       });
-       test('supports value equality', () {
-        expect(GetReported(Path()), GetReported(Path()));
+      test('another value equality', () {
+        expect(GetReported("id"), GetReported("id"));
       });
     });
   });
