@@ -1,5 +1,5 @@
-import 'package:crime_reporter/bloc/policeBloc/policebloc_bloc.dart';
-import 'package:crime_reporter/repositories/police_repositories.dart';
+import 'package:crime_reporter/application/police/bloc/policebloc_bloc.dart';
+import 'package:crime_reporter/infrastructure/repository/police_repositories.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

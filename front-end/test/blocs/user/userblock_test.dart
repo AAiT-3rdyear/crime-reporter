@@ -1,11 +1,9 @@
 import 'dart:html';
 
-import 'package:crime_reporter/models/models.dart';
+import 'package:crime_reporter/application/user/bloc/userbloc_bloc.dart';
+import 'package:crime_reporter/infrastructure/repository/user_repositories.dart';
 import 'package:flutter/cupertino.dart';
-import '../../../lib/bloc/userBloc/userbloc_bloc.dart';
-import '../../../lib/repositories/user_repositories.dart';
 import 'package:bloc_test/bloc_test.dart';
-import '../../../lib/bloc/authBloc/auth_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:http/http.dart';
@@ -67,42 +65,6 @@ void main() {
       expect: () => ImagePosted(),
     );
 
-    // blocTest<UserblocBloc, UserblocState>(
-    //   'select station',
-    //   setUp: () {
-    //     when(
-    //       () => authenticationRepository.reportCrime(
-
-    //       ),
-    //     ).thenAnswer((_) async{});
-    //   },
-    //   build: () => UserblocBloc(
-
-    //   ),
-    //   act: (bloc) {
-    //     bloc
-    //       ..add(PostImage(Path()));
-    //   },
-    //   expect: () =>  ImagePosted(),
-    // );
-
-    // blocTest<UserblocBloc, UserblocState>(
-    //   'select station',
-    //   setUp: () {
-    //     when(
-    //       () => authenticationRepository.getMyReport(
-    //         ()
-    //       ),
-    //     ).thenAnswer((_) async{});
-    //   },
-    //   build: () => UserblocBloc(
-
-    //   ),
-    //   act: (bloc) {
-    //     bloc
-    //       ..add(PostImage(Path()));
-    //   },
-    //   expect: () =>  ImagePosted(),
-    // );
+  
   });
 }

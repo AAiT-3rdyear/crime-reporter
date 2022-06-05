@@ -1,4 +1,4 @@
-import 'package:crime_reporter/bloc/policeBloc/policebloc_bloc.dart';
+import 'package:crime_reporter/application/police/bloc/policebloc_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 

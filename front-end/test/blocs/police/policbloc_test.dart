@@ -1,10 +1,7 @@
-import 'package:crime_reporter/models/models.dart';
-import 'package:crime_reporter/repositories/police_repositories.dart';
-import 'package:crime_reporter/repositories/user_repositories.dart';
+import 'package:crime_reporter/application/police/bloc/policebloc_bloc.dart';
+import 'package:crime_reporter/infrastructure/repository/police_repositories.dart';
 import 'package:flutter/cupertino.dart';
-import '../../../lib/bloc/policeBloc/policebloc_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
-import '../../../lib/bloc/authBloc/auth_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:http/http.dart';

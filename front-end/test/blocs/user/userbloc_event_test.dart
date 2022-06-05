@@ -1,6 +1,5 @@
-import 'package:crime_reporter/bloc/userBloc/userbloc_bloc.dart';
+import 'package:crime_reporter/application/user/bloc/userbloc_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../../lib/bloc/authBloc/auth_bloc.dart';
 
 void main() {
   group('userblocevent', () {
