@@ -35,4 +35,18 @@ class Report{
     factory Report.fromJson(Map<String,dynamic> json) =>_$ReportFromJson(json);
     Map<String,dynamic> toJson() =>_$ReportToJson(this);
        
+    Map<String, dynamic> toMap() {
+    return {
+      "id": crimeId,
+      'title': title,
+      'location': location,
+      'time': time,
+      'description': description,
+      'imageURL': imageURL,
+      'reportTo': reportTo,
+      'status': status,
+      'reporter': reporter,
+    };
+  }
+
 }
