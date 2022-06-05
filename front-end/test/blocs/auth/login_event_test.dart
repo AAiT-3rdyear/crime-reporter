@@ -1,13 +1,12 @@
+import 'package:crime_reporter/application/Auth/Bloc/Auth_state.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-// import 'package:flutter_test/flutter_test.dart';
-// import '../../../lib/bloc/authBloc/auth_bloc.dart';
-
-// void main() {
-//   group('LoginEvent', () {
-//     group('LoginSubmitted', () {
-//       test('supports value comparisons', () {
-//         expect(Login(body: ), LogingIn());
-//       });
-//     });
-//   });
-// }
+void main() {
+  group('LoginEvent', () {
+    group('LoginSubmitted', () {
+      test('supports value comparisons', () {
+        expect(LogingIn(), LogingIn());
+      });
+    });
+  });
+}
