@@ -13,7 +13,6 @@ router.get("/reportedCrimes/:user/:status",(req,res)=>{
 })
 
 
-
 // finding reported crimes 
 router.get("/get",(req,res)=>{
     User.find({role:"Police"},(err,station)=>{
