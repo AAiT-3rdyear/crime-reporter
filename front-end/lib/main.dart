@@ -3,7 +3,7 @@ import 'package:crime_reporter/presentation/common/routes/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
-import 'application/Auth/Bloc/auth_bloc.dart';
+import 'application/Auth/Bloc/Auth_bloc.dart';
 import 'application/police/bloc/policebloc_bloc.dart';
 import 'application/user/bloc/userbloc_bloc.dart';
 
