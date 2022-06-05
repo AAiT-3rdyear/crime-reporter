@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/Auth/Bloc/Auth_state.dart';
-import '../../application/Auth/Bloc/auth_bloc.dart';
+import '../../application/Auth/Bloc/Auth_bloc.dart';
 import '../../application/Auth/auth.dart';
 import '../../application/user/bloc/userbloc_bloc.dart';
 import '../components/bottumNavBar.dart';

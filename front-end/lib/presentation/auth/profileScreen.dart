@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../application/Auth/Bloc/Auth_event.dart';
 import '../../application/Auth/Bloc/Auth_state.dart';
-import '../../application/Auth/Bloc/auth_bloc.dart';
+import '../../application/Auth/Bloc/Auth_bloc.dart';
 import '../../application/Auth/auth.dart';
 
 class Profilepage extends StatefulWidget {
