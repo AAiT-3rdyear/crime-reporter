@@ -54,7 +54,7 @@ void main() {
         act: (bloc) {
           bloc..add(Login(password: 'password', username: 'username'));
         },
-        expect: () => LogingIn(),
+        expect: () => [LogingIn()],
         // LoginFailed()
       );
     });
