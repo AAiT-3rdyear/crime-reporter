@@ -1,4 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:crime_reporter/application/Auth/Bloc/Auth_event.dart';
+import 'package:crime_reporter/application/Auth/Bloc/Auth_state.dart';
 import 'package:crime_reporter/application/Auth/Bloc/auth_bloc.dart';
 import 'package:crime_reporter/infrastructure/repository/user_repositories.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -33,7 +35,7 @@ void main() {
         },
         build: () => AuthBloc(),
         act: (bloc) {
-          bloc..add(Login(password: 'password', username: 'username'));
+          bloc.add(Login(password: 'password', username: 'username'));
         },
         expect: () => <AuthState>[
           LogingIn(),

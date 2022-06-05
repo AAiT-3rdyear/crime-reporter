@@ -1,10 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-
 import '../../../infrastructure/repository/police_repositories.dart';
 import '../../../infrastructure/repository/user_repositories.dart';
-part 'auth_event.dart';
-part 'auth_state.dart';
+import '../../../application/Auth/Bloc/Auth_event.dart';
+import '../../../application/Auth/Bloc/Auth_state.dart';
+
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final userRepository = UserRepository();

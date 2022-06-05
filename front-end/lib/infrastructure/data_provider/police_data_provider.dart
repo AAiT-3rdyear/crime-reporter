@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:crime_reporter/domain/models.dart';
+import '../../domain/Crime_models/report.dart';
 
 class PoliceDataProvider {
   String baseUrl = 'http://10.0.2.2:3000';
