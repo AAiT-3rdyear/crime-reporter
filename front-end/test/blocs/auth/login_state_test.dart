@@ -1,5 +1,5 @@
 
-import 'package:crime_reporter/application/Auth/auth.dart';
+import 'package:crime_reporter/application/Auth/Bloc/auth_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

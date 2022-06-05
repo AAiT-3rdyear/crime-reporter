@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../application/Auth/Bloc/auth_bloc.dart';
 import '../../application/Auth/auth.dart';
 
 class Profilepage extends StatefulWidget {

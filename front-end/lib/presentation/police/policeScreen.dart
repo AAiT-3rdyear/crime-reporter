@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 import 'dart:convert';
 
+import '../../application/Auth/Bloc/auth_bloc.dart';
 import '../../application/Auth/auth.dart';
 import '../../application/police/bloc/policebloc_bloc.dart';
 import '../components/bottumNavBar.dart';

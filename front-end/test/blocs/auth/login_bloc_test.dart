@@ -1,9 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:crime_reporter/application/Auth/auth.dart';
+import 'package:crime_reporter/application/Auth/Bloc/auth_bloc.dart';
 import 'package:crime_reporter/infrastructure/repository/user_repositories.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:http/http.dart';
 
 class MockAuthenticationRepository extends Mock implements UserRepository {}
 
