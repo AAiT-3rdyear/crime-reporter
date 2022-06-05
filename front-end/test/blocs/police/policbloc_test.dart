@@ -25,12 +25,12 @@ void main() {
       'emits sample found for crime',
       setUp: () {
         when(
-          () => authenticationRepository.getReportedCrimes(Path()),
+          () => authenticationRepository.getReportedCrimes("id"),
         ).thenAnswer((_) async {});
       },
       build: () => PoliceblocBloc(),
       act: (bloc) {
-        bloc..add(GetOngoing(Path()));
+        bloc..add(GetOngoing("id"));
       },
       expect: () => GetReportedSucessful(),
     );
@@ -40,16 +40,13 @@ void main() {
       setUp: () {
         when(
           () => authenticationRepository.getSolvedCrimes('user'),
-        ).thenAnswer((_) async {
-        });
+        ).thenAnswer((_) async {});
       },
       build: () => PoliceblocBloc(),
       act: (bloc) {
-        
         PoliceRepository myrepo = PoliceRepository();
         dynamic solved = myrepo.getSolvedCrimes('user');
         bloc.add(GetSolved(solved));
-       
       },
       expect: () => GetSolvedSucessful(),
     );
@@ -58,12 +55,12 @@ void main() {
       'select station',
       setUp: () {
         when(
-          () => authenticationRepository.getOngoingCrimes(Path()),
+          () => authenticationRepository.getOngoingCrimes("id"),
         ).thenAnswer((_) async {});
       },
       build: () => PoliceblocBloc(),
       act: (bloc) {
-        bloc..add(GetOngoing(Path()));
+        bloc..add(GetOngoing("id"));
       },
       expect: () => GetOngoingSucessful(),
     );
