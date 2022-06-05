@@ -1,8 +1,8 @@
 import 'package:crime_reporter/bloc_observer.dart';
 import 'package:crime_reporter/presentation/common/routes/routes.dart';
+import 'package:crime_reporter/presentation/common/themes/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-
 import 'application/Auth/Bloc/Auth_bloc.dart';
 import 'application/police/bloc/policebloc_bloc.dart';
 import 'application/user/bloc/userbloc_bloc.dart';
@@ -33,6 +33,8 @@ class Myapp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+          theme: FlutterCrimeTheme.light,
+          darkTheme: FlutterCrimeTheme.dark,
           debugShowCheckedModeBanner: false,
           routeInformationParser: _router.routeInformationParser,
           routerDelegate: _router.routerDelegate),

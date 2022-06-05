@@ -25,6 +25,8 @@ class UserDataProvider {
     }
   }
 
+  
+
   Future<dynamic> signUpUser(Map<String, dynamic> body) async {
     var response = await http.post(
       Uri.parse(baseUrl + '/user/signup'),
