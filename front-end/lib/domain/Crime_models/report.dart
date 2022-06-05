@@ -1,5 +1,5 @@
 
-import 'package:crime_reporter/domain/User/user.dart';
+import 'package:crime_reporter/domain/User_models/user.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'report.g.dart';
