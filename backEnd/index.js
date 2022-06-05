@@ -22,9 +22,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 const user_route = require('./routes/user_routes')
 const admin_route = require('./routes/admin_routes')
-const crime_route = require("./routes/crime_routs")
 const police_route = require("./routes/police_routes")
-// const profile_route = require("./routes/profile_routes")
+const profile_route = require("./routes/profile_routes")
 
 const bcrypt = require('bcryptjs/dist/bcrypt');
 const { json } = require('body-parser');
@@ -35,9 +34,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/uploads",express.static('uploads'))
 app.use('/user',user_route)
 app.use('/admin',admin_route)
-app.use("/crime",crime_route)
 app.use("/police",police_route)
-// app.use("/profile",profile_route)
+app.use("/profile",profile_route)
 
 
 
@@ -46,6 +44,7 @@ app.post('/login', passport.authenticate('local'),
 
     res.json({
 
+      
         user:{
              token: jwt.sign({email: req.body.email},config.salt_string),
             _id:req.user._id,
@@ -58,12 +57,8 @@ app.post('/login', passport.authenticate('local'),
 
          },
         success : true,
-     }
-       )
-
+     })
    });    
-
-
 
 
 const server = require('http').createServer(app)
@@ -78,11 +73,8 @@ io.on('connection', function (client) {
     clients[id] = client
   })
 
-
-
   client.on('report', function name(msg) {
       console.log(JSON.stringify(msg));
-      // clients[msg.sourceID].emit("report",JSON.stringify(msg.crime))
      if (clients[msg.targetID]){
         clients[msg.targetID].emit("report",JSON.stringify(msg.crime))
        }
