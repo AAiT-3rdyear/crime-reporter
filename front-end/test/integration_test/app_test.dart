@@ -2,7 +2,7 @@ import 'package:crime_reporter/presentation/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import '../lib/main.dart' as app;
+import '../../lib/main.dart' as app;
 
 void main() {
   group("crime-reporter app test", () {
@@ -34,8 +34,6 @@ void main() {
       expect(find.byType(SignUpPage), findsOneWidget);
       expect(find.byType(TextFormField), findsWidgets);
       expect(find.byIcon(Icons.remove), findsNothing);
-
-      
     });
   });
 }
