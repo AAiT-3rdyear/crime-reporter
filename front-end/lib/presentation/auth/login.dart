@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                      padding: EdgeInsets.fromLTRB(10, 5, 20, 10),
+                      padding: const EdgeInsets.fromLTRB(10, 5, 20, 10),
                       child: const Text(
                         'Report',
                         style: TextStyle(
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.bold),
                       )),
                   Container(
-                      padding: EdgeInsets.fromLTRB(10, 0, 20, 10),
+                      padding: const EdgeInsets.fromLTRB(10, 0, 20, 10),
                       child: const Text(
                         'CRIME',
                         style: TextStyle(
