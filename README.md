@@ -1,9 +1,4 @@
-# Project title : crime-reporter
-**group memebers
-  1. Gizaw Agodo ----- UGR/8917/12
-  2. Abnet Anamo ------UGR/7110/12
-  3. Biruk Anley ------UGR/3923/12
-**
+
 
 **project discription**
    Crime-reporter application  help people to report  crimes  to the nearby police station by using their android phone . Crime activities can be theft, fighting, corruption acts and the like. The user can send his file in the form of photo, audio or video to the nearby police station. 
